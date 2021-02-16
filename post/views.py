@@ -16,7 +16,6 @@ def home (request):
         try:
             # كود التشفير
             list1 = []
-
             # ------------------
             # النص المراد تشفيره
             user = username1
@@ -24,22 +23,38 @@ def home (request):
             # ------------------
             # عملية التشفير
             for item in user:
-
-                x = format(ord(item))
-                x_int = int(x) + 77
-                x_str = str(x_int)
-                
-                m = "1x2=9x" + x_str + "1x2=9x" 
+                x = format(ord(item)) # 65
+                x_int = int(x) + 2
+                y = chr(x_int)
+                x_str = str(y)
+                m =  x_str 
                 list1.append(m)
-            #print(list1)
             # ------------------
             # ------------------
             # النص المشفر
             total = ""
             for i in list1:
                 total = total + i
-            print(total)
             # ------------------
+            # ------------------------------------------
+            # ------------------
+            list1 = []
+            # عملية التشفير الثانية 
+            for item in total:
+                x = format(ord(item)) # 65
+                x_int = int(x) + 23
+                y = chr(x_int)
+                x_str = str(y)
+                m = "*$" + x_str + "*$" 
+                list1.append(m)
+            # ------------------
+            # ------------------
+            # النص المشفر
+
+            total = ""
+            for i in list1:
+                total = total + i
+            #print(total)
 
             
             return render (request , "htmlpost/home.html" , {'user':user , 'total':total })
@@ -53,30 +68,51 @@ def home2 (request):
 
     while True:
         try:
-            # كود التشفير
-           
-            list2 = []
-            list3 = []
-            user = username
-           # ------------------
-            # عملية فك تشفير النص
-            a = user.split("1x2=9x")
-            #print(a)
-
+            # ------------------
+            # فك تشفير النص
+            #-------------------
+            user55 = username
+            list55 = []
+            a = user55.split("*$")
             for item1 in a :
                 if item1 == "":
                     pass
                 else:
-                    m = int(item1) - 77
-                    list2.append(m)
-            #print(list2)
-
-            for item2 in list2:
-                y = chr(item2)
-                list3.append(y)
-            #print(list3)
+                    #m = int(item1) - 77
+                    list55.append(item1)
+            total1 = ""
+            for item3 in list55:
+                total1 = total1 + item3
+            # ---------------------------------------------------------------------
+            # كود فك التشفير       
+            list2 = []
+            list3 = []
+            user1 = total1
             # ------------------
-
+            for item1 in user1 :
+                x1 = format(ord(item1))
+                m = int(x1) - 23
+                y = chr(m)
+                list3.append(y)
+            # ------------------
+            # ------------------
+            # النص الذي تم فك تشفيره
+            total1 = ""
+            for item3 in list3:
+                total1 = total1 + item3
+            # ------------------
+            # ------------------------------------------
+            # كود فك التشفير  الثاني     
+            list2 = []
+            list3 = []
+            user3 = total1
+            # ------------------
+            for item1 in user3 :
+                x1 = format(ord(item1))
+                m = int(x1) - 2
+                y = chr(m)
+                list3.append(y)
+            # ------------------
             # ------------------
             # النص الذي تم فك تشفيره
             total1 = ""
@@ -86,7 +122,7 @@ def home2 (request):
             # ------------------
 
             
-            return render (request , "htmlpost/hom2.html" , {'user':user , 'total1':total1})
+            return render (request , "htmlpost/hom2.html" , {'user55':user55 , 'total1':total1})
         except:
             return render (request , "htmlpost/hom2.html")
 
