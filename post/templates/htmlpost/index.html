@@ -76,10 +76,10 @@
         <form style="text-align:center; " method="POST" class="form-group" action=""> 
             {% csrf_token %}
             <label style="color: blanchedalmond;" for="username">اسم المستخدم</label>
-            <input style="border:3px solid blanchedalmond;" class="form-control" type="text" name="username" id="usernmae" value="adrelaft">
+            <input style="border:3px solid blanchedalmond;" class="form-control" type="text" name="username" id="usernmae" value="adrelaft" required=True>
 <br>
             <label style="color: blanchedalmond;" for="password">كلمة المرور</label>
-            <input style="border:3px solid blanchedalmond;" class="form-control" type="password" name="password" id="password">
+            <input style="border:3px solid blanchedalmond;" class="form-control" type="password" name="password" id="password" required=True >
 
             {% if username == "adrelaft" %}
             <p style="color: red; padding: 5px; font-size: 14px;"> كلمة السر خاطئة </p>
