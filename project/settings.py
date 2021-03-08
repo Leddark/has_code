@@ -30,7 +30,7 @@ SECRET_KEY = 'z04+kg(e0#mnnt202d!35*^662=(9d$mhv^+nv(qbuzz_zolan'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://textencryption.herokuapp.com/']
 
 
 # Application definition
