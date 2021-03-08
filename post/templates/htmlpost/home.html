@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +15,7 @@
     <meta name="author" content="Abdullah Mazen Al-Haddad">
 
     <!-- شعار او صورة الذي يظهر بجانب عنوان الصفحة -->
-    <link rel="icon" href="static/img/rrr2.jpg" type="image/jpg">
+    <link rel="icon" href="{% static 'img/rrr2.jpg' %}" type="image/jpg">
 
     <!-- css  bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -43,7 +44,7 @@
 
     <title>تشفير</title>
   </head>
-  <body style="background-image: url('static/img/ww2.gif');   background-repeat: no-repeat;
+  <body style="background-image: url({% static 'img/ww2.gif' %});   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
   
