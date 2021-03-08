@@ -133,7 +133,7 @@ def index (request):
     password = request.POST.get('password')
 
 
-    if username == "adrelaft" and password == "mmoohhaa12345" :
+    if username == "adrelaft" and password == "mmoohhaa123456789" :
         return render (request , "htmlpost/cod.html")
     else:
         
